@@ -1,6 +1,6 @@
 # vue-spa
 
-> HTTP and Routing example
+> Routing example
 
 ## Build Setup
 
