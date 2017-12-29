@@ -6,11 +6,17 @@ import App from './App.vue'
 Vue.use(VueRouter)
 
 const Hello = { template: `<h1>Hello</h1>` };
-const World = { template: `<h1>World</h1>` }
+const HelloName = {
+  props: ['name'],
+  template: `<h1>Hello {{ name }}</h1>`,
+  created() {
+    console.log(`Hello ${this.name}`)
+  }
+}
 
 const routes = [
   { path: '/hello', component: Hello },
-  { path: '/world', component: World }
+  { path: '/hello/:name', component: HelloName, props: true},
 ]
 
 const router = new VueRouter({
