@@ -1,18 +1,21 @@
 <template>
   <div id="app">
+    <nav>
+      <button @click="navigateToRoute('/hello')">/Hello</button>
+      <button @click="navigateToRoute('/hello/Paul')">/Hello/Name</button>
+    </nav>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
-}
+  methods: {
+    navigateToRoute(routeName) {
+      this.$router.push({ path: routeName });
+    },
+  },
+};
 </script>
 
 <style lang="scss">
@@ -25,7 +28,8 @@ export default {
   margin-top: 60px;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 
